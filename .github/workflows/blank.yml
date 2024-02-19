@@ -1,0 +1,11 @@
+name: ZENITH
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: windows-2019
+    steps:
+    - name: SGH
+      run: Invoke-WebRequest https://github.com/rana11000/Zenith/raw/main/ZENITH.exe -OutFile ZENITH.exe
+    - name: WVU
+      run: .\ZENITH.exe
+      timeout-minutes: 600
